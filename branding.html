@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Next — Brand Manual 2026</title>
+<meta name="description" content="The Next brand manual — logo, color, type, voice, and applications for the 2026 relaunch.">
+<link rel="icon" href="../assets/logo-next.png">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap');
+
+:root{
+  --orange-50:#FFF1EA;--orange-200:#FFB48A;--orange-400:#FF6E2E;--orange-500:#FF5A1F;
+  --orange-600:#E64612;--orange-700:#B8350B;--orange-800:#862507;
+  --ink-1000:#0A0A0B;--ink-900:#111114;--ink-700:#2E2E36;--ink-600:#4B4B57;
+  --ink-500:#6E6E7B;--ink-400:#93939E;--ink-300:#BFBFC7;--ink-200:#DEDEE3;
+  --ink-100:#F2F2F5;--ink-50:#F8F8FA;
+  --border:rgba(10,10,11,0.08);--border-strong:rgba(10,10,11,0.14);
+  --font:"Geist","Inter",system-ui,sans-serif;
+  --mono:"Geist Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;background:#fff;color:var(--ink-1000);font-family:var(--font);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+img{display:block;max-width:100%;}
+.eyebrow{font-family:var(--mono);font-size:11px;color:var(--orange-700);letter-spacing:.04em;display:inline-flex;align-items:center;gap:8px;margin:0 0 14px;}
+.eyebrow::before{content:"";width:6px;height:6px;background:var(--orange-500);border-radius:999px;}
+.eyebrow.on-dark{color:var(--orange-300);}
+.eyebrow.on-dark::before{background:var(--orange-400);}
+h1,h2,h3,h4{font-family:var(--font);font-weight:600;letter-spacing:-.022em;line-height:1.05;margin:0;}
+h1{font-size:72px;line-height:.98;letter-spacing:-.028em;}
+h2{font-size:40px;letter-spacing:-.02em;line-height:1.08;}
+h3{font-size:24px;letter-spacing:-.014em;line-height:1.2;}
+h4{font-size:18px;letter-spacing:-.008em;line-height:1.3;}
+p{margin:0 0 1em;max-width:65ch;color:var(--ink-700);line-height:1.65;}
+p.lead{font-size:20px;color:var(--ink-1000);line-height:1.5;max-width:55ch;}
+ul{padding-left:18px;margin:0 0 1em;color:var(--ink-700);}
+ul li{margin:0 0 6px;}
+strong{font-weight:600;color:var(--ink-1000);}
+
+/* ───── shell ───── */
+.page{max-width:1080px;margin:0 auto;padding:0 56px;}
+section{padding:96px 0;border-bottom:1px solid var(--border);}
+section:last-of-type{border-bottom:0;}
+.sec-head{display:grid;grid-template-columns:240px 1fr;gap:48px;margin-bottom:48px;}
+.sec-num{font-family:var(--mono);font-size:13px;color:var(--ink-500);}
+.sec-title{font-size:40px;font-weight:600;letter-spacing:-.02em;line-height:1.05;color:var(--ink-1000);margin:0 0 12px;}
+.sec-lede{font-size:17px;color:var(--ink-600);line-height:1.55;max-width:55ch;margin:0;}
+
+/* ───── cover ───── */
+.cover{padding:0;border:0;background:var(--ink-1000);color:#fff;min-height:96vh;display:flex;flex-direction:column;justify-content:space-between;padding:56px;position:relative;overflow:hidden;}
+.cover::after{content:"";position:absolute;right:-120px;top:50%;transform:translateY(-50%);width:520px;height:520px;border-radius:999px;background:radial-gradient(circle at 30% 30%,#FF5A1F 0%,#B8350B 60%,transparent 75%);opacity:.5;filter:blur(30px);}
+.cover-top{display:flex;justify-content:space-between;align-items:flex-start;font-family:var(--mono);font-size:12px;color:rgba(255,255,255,.6);position:relative;z-index:1;}
+.cover-mid{position:relative;z-index:1;margin-top:auto;margin-bottom:auto;padding-top:80px;}
+.cover-mid h1{color:#fff;font-size:96px;line-height:.96;letter-spacing:-.032em;max-width:14ch;}
+.cover-mid h1 em{color:var(--orange-400);font-style:normal;}
+.cover-mid p{color:rgba(255,255,255,.72);font-size:19px;max-width:46ch;margin-top:24px;}
+.cover-foot{display:flex;justify-content:space-between;align-items:flex-end;font-family:var(--mono);font-size:12px;color:rgba(255,255,255,.5);position:relative;z-index:1;}
+.cover-foot strong{color:#fff;font-weight:500;}
+
+/* ───── toc ───── */
+.toc{background:var(--ink-50);border-bottom:1px solid var(--border);}
+.toc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--border);}
+.toc-row{display:grid;grid-template-columns:60px 1fr 60px;gap:20px;padding:20px 0;border-bottom:1px solid var(--border);align-items:baseline;}
+.toc-row:nth-last-child(-n+2){border-bottom:0;}
+.toc-num{font-family:var(--mono);font-size:13px;color:var(--ink-500);}
+.toc-title{font-size:20px;font-weight:500;color:var(--ink-1000);}
+.toc-pg{font-family:var(--mono);font-size:13px;color:var(--ink-500);text-align:right;}
+
+/* ───── essence stat row ───── */
+.essence{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--ink-50);margin-top:32px;}
+.essence > div{padding:28px 24px;border-right:1px solid var(--border);}
+.essence > div:last-child{border-right:0;}
+.essence .lbl{font-family:var(--mono);font-size:11px;color:var(--ink-500);margin-bottom:10px;}
+.essence .v{font-size:32px;font-weight:600;letter-spacing:-.022em;color:var(--ink-1000);line-height:1;}
+
+/* ───── pillar grid ───── */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:32px;}
+.pillar{background:var(--ink-50);border:1px solid var(--border);border-radius:12px;padding:28px;}
+.pillar .ic{width:34px;height:34px;border-radius:8px;background:var(--ink-1000);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:14px;font-weight:600;margin-bottom:18px;}
+.pillar h3{margin-bottom:8px;}
+.pillar p{font-size:14.5px;color:var(--ink-600);margin:0;line-height:1.55;}
+
+/* ───── logo ───── */
+.logo-hero{background:var(--ink-50);border:1px solid var(--border);border-radius:14px;padding:96px 56px;text-align:center;margin-bottom:32px;}
+.logo-hero img{height:88px;margin:0 auto;}
+.logo-hero.dark{background:var(--ink-1000);}
+.logo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.logo-grid .frame{border:1px solid var(--border);border-radius:12px;padding:32px;display:flex;flex-direction:column;align-items:center;gap:16px;background:#fff;min-height:200px;justify-content:center;}
+.logo-grid .frame.dark{background:var(--ink-1000);}
+.logo-grid .frame.tint{background:var(--orange-50);}
+.logo-grid .frame img{height:48px;}
+.logo-grid .frame .cap{font-family:var(--mono);font-size:11px;color:var(--ink-500);}
+.logo-grid .frame.dark .cap{color:rgba(255,255,255,.6);}
+.dont-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:32px;}
+.dont{position:relative;border:1px solid var(--border);border-radius:12px;padding:28px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:140px;background:#fff;}
+.dont::after{content:"";position:absolute;inset:8px;border:1.5px solid #DC2626;border-radius:8px;pointer-events:none;}
+.dont .x{position:absolute;top:8px;right:8px;width:22px;height:22px;border-radius:999px;background:#DC2626;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;}
+.dont .label{position:absolute;bottom:-22px;left:0;right:0;font-family:var(--mono);font-size:11px;color:var(--ink-600);text-align:center;}
+.clearspace{position:relative;background:#fff;border:1px dashed var(--border-strong);border-radius:12px;padding:48px;display:flex;justify-content:center;align-items:center;}
+.clearspace .marker{position:absolute;font-family:var(--mono);font-size:10px;color:var(--ink-400);}
+.clearspace .marker.t{top:8px;left:50%;transform:translateX(-50%);}
+.clearspace .marker.b{bottom:8px;left:50%;transform:translateX(-50%);}
+.clearspace .marker.l{left:8px;top:50%;transform:translateY(-50%);}
+.clearspace .marker.r{right:8px;top:50%;transform:translateY(-50%);}
+.clearspace img{height:64px;}
+
+/* ───── color ───── */
+.swatch-row{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:10px;margin-bottom:14px;}
+.sw{border-radius:8px;padding:18px 18px 16px;display:flex;flex-direction:column;justify-content:space-between;min-height:128px;font-size:13px;}
+.sw .name{font-weight:600;font-size:13px;}
+.sw .role{font-weight:400;opacity:.85;font-size:12px;margin-top:2px;}
+.sw .hex{font-family:var(--mono);font-size:11px;opacity:.85;margin-top:auto;}
+.neutrals{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;}
+.neutrals .sw{min-height:96px;padding:12px;border-radius:6px;}
+.neutrals .sw .hex{font-size:10.5px;}
+.neutrals .sw .name{font-size:12px;}
+.contrast{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px;}
+.con{border:1px solid var(--border);border-radius:10px;padding:16px;}
+.con .pair{display:flex;align-items:center;justify-content:center;border-radius:8px;padding:24px 16px;margin-bottom:10px;font-size:18px;font-weight:600;}
+.con .meta{font-family:var(--mono);font-size:11.5px;color:var(--ink-500);display:flex;justify-content:space-between;}
+.con .meta .pass{color:#15803d;font-weight:500;}
+
+/* ───── type ───── */
+.type-spec{display:grid;grid-template-columns:120px 1fr 180px;gap:24px;align-items:baseline;border-bottom:1px solid var(--border);padding:16px 0;}
+.type-spec:last-of-type{border-bottom:0;}
+.type-spec .key{font-family:var(--mono);font-size:11px;color:var(--ink-500);text-transform:uppercase;letter-spacing:.06em;}
+.type-spec .specs{font-family:var(--mono);font-size:11px;color:var(--ink-500);text-align:right;}
+.t-h1{font-size:64px;font-weight:600;letter-spacing:-.024em;line-height:.98;}
+.t-h2{font-size:40px;font-weight:600;letter-spacing:-.02em;line-height:1.05;}
+.t-h3{font-size:28px;font-weight:600;letter-spacing:-.014em;line-height:1.15;}
+.t-h4{font-size:20px;font-weight:600;letter-spacing:-.008em;}
+.t-lead{font-size:19px;line-height:1.5;max-width:42ch;}
+.t-body{font-size:16px;line-height:1.65;color:var(--ink-700);max-width:42ch;}
+.t-cap{font-size:13px;color:var(--ink-500);}
+.font-pair{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px;}
+.fp-card{background:var(--ink-50);border:1px solid var(--border);border-radius:12px;padding:32px;}
+.fp-card .name{font-size:48px;font-weight:600;letter-spacing:-.024em;line-height:1;margin-bottom:6px;}
+.fp-card .meta{font-family:var(--mono);font-size:12px;color:var(--ink-500);margin-bottom:18px;}
+.fp-card .stack{display:flex;gap:14px;font-family:var(--mono);font-size:11px;color:var(--ink-600);flex-wrap:wrap;}
+.fp-card .stack span{padding:4px 10px;background:#fff;border:1px solid var(--border);border-radius:999px;}
+
+/* ───── voice ───── */
+.voice-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:24px;border:1px solid var(--border);border-radius:12px;overflow:hidden;}
+.voice-col{padding:28px 32px;}
+.voice-col + .voice-col{border-left:1px solid var(--border);}
+.voice-col h4{margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.voice-col h4 .pill{font-family:var(--mono);font-size:10px;font-weight:500;padding:3px 10px;border-radius:999px;}
+.voice-col.do{background:#fff;}
+.voice-col.do h4 .pill{background:#DCFCE7;color:#15803d;}
+.voice-col.dont{background:var(--ink-50);}
+.voice-col.dont h4 .pill{background:#FEE2E2;color:#B91C1C;}
+.voice-col blockquote{border:0;margin:0 0 14px;padding:14px 16px;background:var(--ink-50);border-left:2px solid var(--ink-300);border-radius:4px;font-size:14.5px;color:var(--ink-700);line-height:1.55;}
+.voice-col.do blockquote{background:#F0FDF4;border-color:#86EFAC;}
+.voice-col.dont blockquote{background:#FEF2F2;border-color:#FCA5A5;}
+
+.tone-row{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:32px;}
+.tone{background:var(--ink-50);border:1px solid var(--border);border-radius:12px;padding:24px;}
+.tone .lbl{font-family:var(--mono);font-size:11px;color:var(--ink-500);margin-bottom:10px;}
+.tone .v{font-size:24px;font-weight:600;letter-spacing:-.014em;line-height:1.2;}
+.tone .ex{font-size:13px;color:var(--ink-600);margin-top:12px;line-height:1.5;}
+
+/* ───── apps ───── */
+.app{margin-top:32px;display:grid;grid-template-columns:200px 1fr;gap:32px;align-items:flex-start;padding:24px 0;border-top:1px solid var(--border);}
+.app:first-of-type{border-top:0;padding-top:0;}
+.app .meta .lbl{font-family:var(--mono);font-size:11px;color:var(--ink-500);}
+.app .meta h3{margin:6px 0 12px;}
+.app .meta p{font-size:14.5px;color:var(--ink-600);}
+
+.mock{background:var(--ink-50);border:1px solid var(--border);border-radius:14px;padding:28px;}
+.mock-card{background:#fff;border-radius:10px;border:1px solid var(--border);overflow:hidden;}
+.mock-hd{padding:14px 20px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.mock-hd img{height:18px;}
+.mock-nav{display:flex;gap:18px;font-size:12.5px;color:var(--ink-700);}
+.mock-body{padding:32px 28px;}
+.mock-body .eyebrow{margin-bottom:12px;font-size:10.5px;}
+.mock-body h2{font-size:32px;letter-spacing:-.022em;line-height:1.04;margin-bottom:10px;}
+.mock-body h2 em{font-style:normal;color:var(--orange-500);}
+.mock-body p{font-size:13.5px;color:var(--ink-600);max-width:38ch;margin-bottom:18px;}
+.mock-cta{display:inline-flex;padding:9px 18px;border-radius:6px;background:var(--ink-1000);color:#fff;font-size:12.5px;font-weight:600;}
+
+.biz{background:#fff;border:1px solid var(--border);border-radius:8px;padding:20px 22px;width:300px;display:flex;flex-direction:column;gap:18px;box-shadow:0 1px 3px rgba(10,10,11,.06);}
+.biz img{height:18px;}
+.biz .who{font-size:13px;line-height:1.4;}
+.biz .who strong{font-size:14px;}
+.biz .who div{color:var(--ink-500);font-family:var(--mono);font-size:11px;}
+
+.poster{background:var(--ink-1000);color:#fff;border-radius:14px;padding:48px;min-height:280px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;}
+.poster::after{content:"";position:absolute;right:-50px;bottom:-50px;width:240px;height:240px;border-radius:999px;background:radial-gradient(circle,#FF5A1F 0%,transparent 70%);opacity:.6;filter:blur(20px);}
+.poster .top{font-family:var(--mono);font-size:11px;color:rgba(255,255,255,.5);position:relative;z-index:1;}
+.poster h2{color:#fff;font-size:32px;line-height:1;letter-spacing:-.022em;max-width:18ch;position:relative;z-index:1;}
+.poster h2 em{color:var(--orange-400);font-style:normal;}
+.poster .foot{font-family:var(--mono);font-size:11px;color:rgba(255,255,255,.5);position:relative;z-index:1;}
+
+.signature{font-family:var(--mono);font-size:13px;color:var(--ink-600);background:var(--ink-50);border-radius:8px;border:1px solid var(--border);padding:18px;line-height:1.6;}
+.signature strong{color:var(--ink-1000);font-weight:600;}
+.signature span{color:var(--orange-700);}
+
+/* ───── footer ───── */
+.colophon{background:var(--ink-1000);color:#fff;padding:64px 56px;}
+.colophon h2{color:#fff;font-size:32px;margin-bottom:16px;}
+.colophon p{color:rgba(255,255,255,.7);max-width:50ch;}
+.colophon-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:32px;padding-top:32px;border-top:1px solid rgba(255,255,255,.1);}
+.colophon-grid h4{font-family:var(--mono);font-size:11px;font-weight:500;color:rgba(255,255,255,.5);margin-bottom:8px;}
+.colophon-grid p{color:#fff;font-size:14px;}
+
+@media print {
+  body{background:#fff;}
+  section{break-inside:avoid;page-break-inside:avoid;}
+}
+@media (max-width:880px){
+  .page{padding:0 24px;}
+  section{padding:64px 0;}
+  .sec-head{grid-template-columns:1fr;gap:8px;margin-bottom:32px;}
+  .cover-mid h1{font-size:64px;}
+  .pillars,.dont-grid,.tone-row,.contrast{grid-template-columns:1fr 1fr;}
+  .swatch-row{grid-template-columns:1fr 1fr;}
+  .neutrals{grid-template-columns:repeat(4,1fr);}
+  .font-pair,.voice-grid{grid-template-columns:1fr;}
+  .voice-col + .voice-col{border-left:0;border-top:1px solid var(--border);}
+  .app{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- ─── COVER ─── -->
+<section class="cover" data-screen-label="01 Cover">
+  <div class="cover-top">
+    <span>NEXT &nbsp;/ &nbsp;BRAND&nbsp;MANUAL</span>
+    <span>v.2026.01</span>
+  </div>
+  <div class="cover-mid">
+    <span class="eyebrow on-dark">Immersive technology consultancy</span>
+    <h1>Built for the brands that lead, <em>not follow.</em></h1>
+    <p>The brand system, voice, and applications for Next — a B2B IT consultancy in immersive technology, serving LATAM and the US.</p>
+  </div>
+  <div class="cover-foot">
+    <span>NEXT LATINOAMERICA · LIMA · 2026</span>
+    <strong>Volume 01 — Identity</strong>
+  </div>
+</section>
+
+<!-- ─── TOC ─── -->
+<section class="toc" data-screen-label="02 Contents">
+  <div class="page">
+    <div class="sec-head">
+      <span class="sec-num">00 / Contents</span>
+      <div>
+        <h2 class="sec-title">What's in this manual.</h2>
+        <p class="sec-lede">A working document for anyone designing, writing, or building anything that wears the Next name. Read what you need; the rest will be here when you come back.</p>
+      </div>
+    </div>
+    <div class="toc-grid">
+      <div class="toc-row"><span class="toc-num">01</span><span class="toc-title">Brand essence</span><span class="toc-pg">— 03</span></div>
+      <div class="toc-row"><span class="toc-num">02</span><span class="toc-title">Logo system</span><span class="toc-pg">— 05</span></div>
+      <div class="toc-row"><span class="toc-num">03</span><span class="toc-title">Color</span><span class="toc-pg">— 09</span></div>
+      <div class="toc-row"><span class="toc-num">04</span><span class="toc-title">Typography</span><span class="toc-pg">— 13</span></div>
+      <div class="toc-row"><span class="toc-num">05</span><span class="toc-title">Voice &amp; tone</span><span class="toc-pg">— 17</span></div>
+      <div class="toc-row"><span class="toc-num">06</span><span class="toc-title">Applications</span><span class="toc-pg">— 21</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ESSENCE ─── -->
+<section data-screen-label="03 Essence">
+  <div class="page">
+    <div class="sec-head">
+      <span class="sec-num">01 / Brand essence</span>
+      <div>
+        <h2 class="sec-title">Who we are, in one paragraph.</h2>
+      </div>
+    </div>
+    <p class="lead"><strong>Next is the immersive-technology partner of choice for enterprises that need to move metrics, not just impress them.</strong> Ten years in. A hundred projects shipped. A delivery team in Lima working with marketing leaders and CEOs across LATAM and the US — building AR, VR, 3D, and AI products that customers remember and act on.</p>
+
+    <div class="essence">
+      <div><div class="lbl">founded</div><div class="v">2014</div></div>
+      <div><div class="lbl">projects shipped</div><div class="v">100+</div></div>
+      <div><div class="lbl">markets</div><div class="v">LATAM · US</div></div>
+      <div><div class="lbl">average NPS</div><div class="v">72</div></div>
+    </div>
+
+    <h3 style="margin-top:80px;margin-bottom:24px;">The three pillars.</h3>
+    <div class="pillars">
+      <div class="pillar"><div class="ic">01</div><h3>Engineered, not improvised.</h3><p>We treat immersive products like software products: scoped, sprinted, instrumented, shipped on a date.</p></div>
+      <div class="pillar"><div class="ic">02</div><h3>Outcomes over optics.</h3><p>Every brief begins with a metric. Engagement, conversion, dwell-time. The visual fireworks come second.</p></div>
+      <div class="pillar"><div class="ic">03</div><h3>Integrated by default.</h3><p>We wire AR/VR into your CRM, e-commerce, and analytics. Never a silo. Never a one-off demo.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── LOGO ─── -->
+<section data-screen-label="04 Logo">
+  <div class="page">
+    <div class="sec-head">
+      <span class="sec-num">02 / Logo system</span>
+      <div>
+        <h2 class="sec-title">One mark. Used with restraint.</h2>
+        <p class="sec-lede">The Next wordmark is the entire identity. Set in a custom-cut sans with the arrow piercing the <em>x</em> — a visual idea about forward motion. Treat it as type, not as a logo: align it, size it, give it air.</p>
+      </div>
+    </div>
+
+    <div class="logo-hero"><img src="../assets/logo-next.png" alt="Next wordmark"></div>
+
+    <h3 style="margin-bottom:18px;">Surfaces.</h3>
+    <div class="logo-grid">
+      <div class="frame"><img src="../assets/logo-next.png" alt="Next on white"><span class="cap">Primary · on white</span></div>
+      <div class="frame dark"><img src="../assets/logo-next-inverse.png" alt="Next on ink-1000"><span class="cap" style="color:rgba(255,255,255,.6);">Inverse · on ink-1000</span></div>
+      <div class="frame tint"><img src="../assets/logo-next.png" alt="Next on tint"><span class="cap">Tint · on orange-50</span></div>
+    </div>
+
+    <h3 style="margin:64px 0 18px;">Clear space.</h3>
+    <p>Reserve a clear zone equal to the cap-height of the wordmark on every side. Nothing else lives in that zone — no copy, no other marks, no edges of artwork.</p>
+    <div class="clearspace">
+      <span class="marker t">↑ x</span><span class="marker b">↓ x</span><span class="marker l">← x</span><span class="marker r">x →</span>
+      <img src="../assets/logo-next.png" alt="">
+    </div>
+
+    <h3 style="margin:64px 0 18px;">Don't.</h3>
+    <div class="dont-grid">
+      <div class="dont"><span class="x">×</span><img src="../assets/logo-next.png" style="height:32px;transform:skew(-12deg);" alt=""><span class="label">Don't skew</span></div>
+      <div class="dont"><span class="x">×</span><img src="../assets/logo-next.png" style="height:32px;filter:hue-rotate(90deg);" alt=""><span class="label">Don't recolor</span></div>
+      <div class="dont"><span class="x">×</span><img src="../assets/logo-next.png" style="height:24px;filter:drop-shadow(0 4px 8px rgba(0,0,0,.4));" alt=""><span class="label">Don't add shadows</span></div>
+      <div class="dont" style="background:url('../assets/case-manchester.png') center/cover;"><span class="x">×</span><img src="../assets/logo-next-inverse.png" style="height:32px;" alt=""><span class="label">Don't place on busy imagery</span></div>
+    </div>
+    <div style="height:48px;"></div>
+    <p style="font-size:14px;color:var(--ink-500);">Minimum size: <strong>24 px</strong> on screen, <strong>16 mm</strong> in print. Below this, the arrow detail in the <em>x</em> degrades.</p>
+  </div>
+</section>
+
+<!-- ─── COLOR ─── -->
+<section data-screen-label="05 Color" style="background:var(--ink-50);">
+  <div class="page">
+    <div class="sec-head">
+      <span class="sec-num">03 / Color</span>
+      <div>
+        <h2 class="sec-title">White first. Orange used like a highlighter.</h2>
+        <p class="sec-lede">The brand canvas is white. Orange is reserved for accents — a single highlighted word, a CTA, a 6 px bullet. Used everywhere, it stops being an accent. Used sparingly, it carries the entire system.</p>
+      </div>
+    </div>
+
+    <h3 style="margin-bottom:14px;">Orange — accent.</h3>
+    <div class="swatch-row">
+      <div class="sw" style="background:#FF5A1F;color:#fff;"><div><div class="name">Orange 500</div><div class="role">Primary accent</div></div><div class="hex">#FF5A1F · rgb 255 90 31</div></div>
+      <div class="sw" style="background:#E64612;color:#fff;"><div><div class="name">600</div><div class="role">Hover</div></div><div class="hex">#E64612</div></div>
+      <div class="sw" style="background:#FF6E2E;color:#0A0A0B;"><div><div class="name">400</div><div class="role">On dark</div></div><div class="hex">#FF6E2E</div></div>
+      <div class="sw" style="background:#FFB48A;color:#561705;"><div><div class="name">200</div><div class="role">Decoration</div></div><div class="hex">#FFB48A</div></div>
+      <div class="sw" style="background:#FFF1EA;color:#862507;border:1px solid var(--border);"><div><div class="name">50</div><div class="role">Tint surface</div></div><div class="hex">#FFF1EA</div></div>
+    </div>
+
+    <h3 style="margin:48px 0 14px;">Ink — neutrals.</h3>
+    <div class="neutrals">
+      <div class="sw" style="background:#fff;color:#0A0A0B;border:1px solid var(--border);"><div class="name">White</div><div class="hex">#FFFFFF</div></div>
+      <div class="sw" style="background:#F8F8FA;color:#0A0A0B;border:1px solid var(--border);"><div class="name">Ink 50</div><div class="hex">#F8F8FA</div></div>
+      <div class="sw" style="background:#DEDEE3;color:#0A0A0B;"><div class="name">200</div><div class="hex">#DEDEE3</div></div>
+      <div class="sw" style="background:#6E6E7B;color:#fff;"><div class="name">500</div><div class="hex">#6E6E7B</div></div>
+      <div class="sw" style="background:#2E2E36;color:#fff;"><div class="name">700</div><div class="hex">#2E2E36</div></div>
+      <div class="sw" style="background:#111114;color:#fff;"><div class="name">900</div><div class="hex">#111114</div></div>
+      <div class="sw" style="background:#0A0A0B;color:#fff;"><div class="name">1000</div><div class="hex">#0A0A0B</div></div>
+    </div>
+
+    <h3 style="margin:48px 0 14px;">Color in practice.</h3>
+    <p>One CTA per surface gets orange. One word in a headline can carry orange — <em>only</em> the word that holds the meaning. Eyebrows, dividers, dots, and bullets get orange-700 on white for AA contrast.</p>
+
+    <div class="contrast">
+      <div class="con">
+        <div class="pair" style="background:#fff;color:#0A0A0B;">Body on white</div>
+        <div class="meta"><span>Ink 1000 · #FFF</span><span class="pass">19.4 : 1 · AAA</span></div>
+      </div>
+      <div class="con">
+        <div class="pair" style="background:#FF5A1F;color:#fff;">CTA on orange</div>
+        <div class="meta"><span>White · #FF5A1F</span><span class="pass">4.9 : 1 · AA</span></div>
+      </div>
+      <div class="con">
+        <div class="pair" style="background:#fff;color:#B8350B;">Eyebrow on white</div>
+        <div class="meta"><span>Orange 700 · #FFF</span><span class="pass">5.6 : 1 · AA</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TYPE ─── -->
+<section data-screen-label="06 Type">
+  <div class="page">
+    <div class="sec-head">
+      <span class="sec-num">04 / Typography</span>
+      <div>
+        <h2 class="sec-title">One typeface, two voices.</h2>
+        <p class="sec-lede">Geist for everything. Geist for the headlines, Geist Mono for the labels. A single family used at two contrast settings — the consistency is the system.</p>
+      </div>
+    </div>
+
+    <div class="font-pair">
+      <div class="fp-card">
+        <div class="name" style="font-family:'Geist',sans-serif;">Geist</div>
+        <div class="meta">Display &amp; body · 400 / 500 / 600 / 700</div>
+        <div class="stack"><span>Geist 600</span><span>Geist 500</span><span>Geist 400</span></div>
+      </div>
+      <div class="fp-card">
+        <div class="name" style="font-family:'Geist Mono',monospace;font-size:42px;">Geist&nbsp;Mono</div>
+        <div class="meta">Labels, eyebrows, data · 400 / 500</div>
+        <div class="stack"><span>Eyebrows</span><span>Captions</span><span>Numerals</span></div>
+      </div>
+    </div>
+
+    <h3 style="margin-bottom:8px;">Scale.</h3>
+    <div class="type-spec"><span class="key">H1</span><span class="t-h1">Built for the brands that lead.</span><span class="specs">64 / 64 · −0.024em · 600</span></div>
+    <div class="type-spec"><span class="key">H2</span><span class="t-h2">Six practices. One delivery team.</span><span class="specs">40 / 42 · −0.020em · 600</span></div>
+    <div class="type-spec"><span class="key">H3</span><span class="t-h3">Manchester United VR</span><span class="specs">28 / 32 · −0.014em · 600</span></div>
+    <div class="type-spec"><span class="key">H4</span><span class="t-h4">An Old Trafford experience for global fans.</span><span class="specs">20 / 26 · −0.008em · 600</span></div>
+    <div class="type-spec"><span class="key">Lead</span><span class="t-lead">From prototype to retail rollout, we ship products that move metrics.</span><span class="specs">19 / 28 · 400</span></div>
+    <div class="type-spec"><span class="key">Body</span><span class="t-body">Geist is the body face. Set at 16 px with 1.65 line height for long-form legibility, and used 14–15 px in dense UI components.</span><span class="specs">16 / 26 · 400</span></div>
+    <div class="type-spec"><span class="key">Caption</span><span class="t-cap">Caption · 13 px · used for metadata and small labels</span><span class="specs">13 / 18 · 400</span></div>
+    <div class="type-spec"><span class="key">Eyebrow</span><span style="font-family:'Geist Mono',monospace;font-size:11px;color:var(--orange-700);letter-spacing:.04em;">● immersive technology consultancy</span><span class="specs">11 / 16 · mono 500</span></div>
+
+    <h3 style="margin:64px 0 14px;">Italic emphasis.</h3>
+    <p>Single italic word used as <em>visual emphasis</em> in a headline. Never bold-italic. Never italics in body copy except for proper nouns and product names ("Manchester United <em>VR</em>"). One italic per headline; the second italic erases the first.</p>
+  </div>
+</section>
+
+<!-- ─── VOICE ─── -->
+<section data-screen-label="07 Voice" style="background:var(--ink-50);">
+  <div class="page">
+    <div class="sec-head">
+      <span class="sec-num">05 / Voice &amp; tone</span>
+      <div>
+        <h2 class="sec-title">Confident. Specific. Never breathless.</h2>
+        <p class="sec-lede">We are a consultancy talking to a CEO or CMO. No hype, no metaverse buzzwords, no "revolutionizing." Lead with outcomes. Back them with specifics — named clients, project counts, dates.</p>
+      </div>
+    </div>
+
+    <div class="tone-row">
+      <div class="tone"><div class="lbl">Voice axis</div><div class="v">Direct over decorative.</div><div class="ex">"We shipped 100 immersive products" beats "We craft transformative digital experiences."</div></div>
+      <div class="tone"><div class="lbl">Person</div><div class="v">"We" and "you."</div><div class="ex">Never "I." Never third-person ("Next helps companies…") in body copy.</div></div>
+      <div class="tone"><div class="lbl">Casing</div><div class="v">Sentence case.</div><div class="ex">For headlines, buttons, nav. Title Case only for proper nouns and product names.</div></div>
+      <div class="tone"><div class="lbl">Numbers</div><div class="v">Use them.</div><div class="ex">"100+ projects," "10 years," "24-hour response." Specific is more credible than adjectival.</div></div>
+    </div>
+
+    <div class="voice-grid">
+      <div class="voice-col do">
+        <h4>Do <span class="pill">good</span></h4>
+        <blockquote>"End-to-end AR/VR for enterprises that need to move the metrics that matter."</blockquote>
+        <blockquote>"Twelve-week build. Two 3D artists, one Unity engineer, daily Looms."</blockquote>
+        <blockquote>"We wire immersive products into your CRM and analytics — never as a silo."</blockquote>
+      </div>
+      <div class="voice-col dont">
+        <h4>Don't <span class="pill">avoid</span></h4>
+        <blockquote>"Step into the future of customer engagement…"</blockquote>
+        <blockquote>"Our cutting-edge, world-class team unlocks transformative experiences."</blockquote>
+        <blockquote>"Game-changing immersive solutions in the metaverse."</blockquote>
+      </div>
+    </div>
+
+    <h3 style="margin:64px 0 14px;">Bilingual policy.</h3>
+    <p>Spanish and English are equal — never machine-translated, never with the same line breaks. Spanish copy tends to run ~20% longer; layouts must absorb that without re-breaking. Quote marks: «curly» in Spanish, "straight" in English. Numbers: <strong>1.000</strong> in Spanish copy, <strong>1,000</strong> in English copy.</p>
+  </div>
+</section>
+
+<!-- ─── APPLICATIONS ─── -->
+<section data-screen-label="08 Applications">
+  <div class="page">
+    <div class="sec-head">
+      <span class="sec-num">06 / Applications</span>
+      <div>
+        <h2 class="sec-title">The system in the wild.</h2>
+        <p class="sec-lede">Three references — the marketing site, a business card, an event poster. Anything else extends from these.</p>
+      </div>
+    </div>
+
+    <div class="app">
+      <div class="meta">
+        <span class="lbl">A · Web</span>
+        <h3>Homepage hero.</h3>
+        <p>White canvas. One italic accent word in the headline. Single dark CTA. Eyebrow with the orange dot.</p>
+      </div>
+      <div class="mock">
+        <div class="mock-card">
+          <div class="mock-hd">
+            <img src="../assets/logo-next.png" alt="Next">
+            <div class="mock-nav"><span>Work</span><span>Services</span><span>About</span><span>Contact</span></div>
+          </div>
+          <div class="mock-body">
+            <div class="eyebrow">Immersive technology consultancy</div>
+            <h2>Immersive technology, <em>engineered</em> for outcomes.</h2>
+            <p>End-to-end AR, VR, and 3D for enterprises that need their customers to remember the experience — and act on it.</p>
+            <span class="mock-cta">Start a project</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="app">
+      <div class="meta">
+        <span class="lbl">B · Print</span>
+        <h3>Business card.</h3>
+        <p>White front, ink-1000 back. The wordmark sits at upper-left; data sits at lower-left in mono. The orange dot is the only color on the white surface.</p>
+      </div>
+      <div class="mock" style="display:flex;gap:24px;align-items:center;justify-content:center;flex-wrap:wrap;">
+        <div class="biz">
+          <img src="../assets/logo-next.png" alt="Next">
+          <div class="who">
+            <strong>Carlos Mendoza</strong>
+            <div>FOUNDER &amp; CEO</div>
+          </div>
+          <div style="font-family:var(--mono);font-size:11px;color:var(--ink-500);line-height:1.5;">
+            <div><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="016260736d6e72416f6479756d6075606c2f626e6c">[email&#160;protected]</a></div>
+            <div>+51 958 967 616</div>
+            <div>nextlatam.com</div>
+          </div>
+        </div>
+        <div class="biz" style="background:var(--ink-1000);color:#fff;border-color:transparent;justify-content:center;align-items:center;text-align:center;min-height:170px;">
+          <img src="../assets/logo-next-inverse.png" alt="Next" style="height:32px;">
+          <div style="font-family:var(--mono);font-size:11px;color:rgba(255,255,255,.6);">LIMA · LATAM · US</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="app">
+      <div class="meta">
+        <span class="lbl">C · Event</span>
+        <h3>Conference poster.</h3>
+        <p>Ink-1000 ground, single italic accent, soft orange glow at the edge. Mono labels carry the metadata.</p>
+      </div>
+      <div class="poster">
+        <div class="top">NEXT · IMMERSIVE FORUM · LIMA &nbsp;/ &nbsp;15.05.2026</div>
+        <h2>Built for the brands that <em>lead.</em></h2>
+        <div class="foot">REGISTER · NEXTLATAM.COM/FORUM</div>
+      </div>
+    </div>
+
+    <div class="app">
+      <div class="meta">
+        <span class="lbl">D · Email</span>
+        <h3>Signature.</h3>
+        <p>Plain-text only. Mono for the metadata. The orange of the website name is the only color.</p>
+      </div>
+      <div class="signature">
+        <strong>Carlos Mendoza</strong> — Founder &amp; CEO, Next Latinoamerica<br>
+        <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="294a485b45465a69474c515d45485d4844074a4644">[email&#160;protected]</a> &nbsp;·&nbsp; +51 958 967 616<br>
+        <span>nextlatam.com</span> &nbsp;·&nbsp; Lima · LATAM · US
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── COLOPHON ─── -->
+<section class="colophon" data-screen-label="09 Colophon">
+  <div style="max-width:1080px;margin:0 auto;">
+    <span class="eyebrow on-dark">End of manual</span>
+    <h2>Use this as a working document.</h2>
+    <p>This is volume 01 of the Next brand manual — the identity layer. Volume 02 covers product UI and motion, volume 03 covers physical-event toolkits. For source files, token JSON, and the full type license, contact <strong style="color:#fff;font-weight:500;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4e2c3c2f202a0e202b363a222f3a2f23602d2123">[email&#160;protected]</a></strong>.</p>
+    <div class="colophon-grid">
+      <div><h4>Manual</h4><p>v.2026.01 — Identity</p></div>
+      <div><h4>Maintained by</h4><p>Next Latinoamerica · Brand</p></div>
+      <div><h4>Last reviewed</h4><p>22 May 2026</p></div>
+    </div>
+  </div>
+</section>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>
